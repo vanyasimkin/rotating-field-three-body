@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "note": "Replace URLs only after immutable Zenodo records are created.",
+  "assets": [
+    {
+      "name": "surrogate_model",
+      "filename": "delta3_surrogate_corrected.joblib",
+      "url": "REPLACE_WITH_ZENODO_MODEL_DOWNLOAD_URL",
+      "sha256": "75f58bd77a49b4dce61ffcfe2591f5183bdfc709e9dd25a1f2a2f9d7d42eed68",
+      "size_bytes": 5767044032,
+      "required_for": ["predict-triplet", "predict-cluster"]
+    },
+    {
+      "name": "refined_pair_map",
+      "filename": "scm_pair_orientation_map_lmax6_beta2p5.npz",
+      "url": "REPLACE_WITH_ZENODO_PAIR_MAP_DOWNLOAD_URL",
+      "sha256": "a1e959250ee1af07af8ed16b90fb6f8c4c5c20b8a70c9c445d3134f0aa9d2a4d",
+      "required_for": ["predict-cluster", "scm-triplet"]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "selected_model": "extratrees",
+  "n_grid": 44100,
+  "n_offgrid": 400,
+  "n_features": 120,
+  "compact_cutoff": 1.8,
+  "offgrid_base_weight": 6.0,
+  "candidate_models": {
+    "histgb": {
+      "score": 0.20792271372941531,
+      "grid": {
+        "n": 4410,
+        "r2": 0.9987088097095588,
+        "mae": 0.00998578172150962,
+        "rmse": 0.0425834203872068,
+        "bias": 0.0006449379922956321,
+        "sign_accuracy": 1.0,
+        "n_sign": 1536
+      },
+      "offgrid": {
+        "n": 100,
+        "r2": 0.9797358873047202,
+        "mae": 0.05359800296677966,
+        "rmse": 0.09171224762463981,
+        "bias": 0.030725435260226037,
+        "sign_accuracy": 1.0,
+        "n_sign": 36
+      },
+      "offgrid_compact": {
+        "n": 72,
+        "r2": 0.9797950425702862,
+        "mae": 0.07117254185267877,
+        "rmse": 0.10769378202733414,
+        "bias": 0.04107292349787839,
+        "sign_accuracy": 1.0,
+        "n_sign": 36
+      }
+    },
+    "extratrees": {
+      "score": 0.2043955497490914,
+      "grid": {
+        "n": 4410,
+        "r2": 0.9995020406102857,
+        "mae": 0.005255887121330638,
+        "rmse": 0.026444927404285962,
+        "bias": 0.0020574513638019183,
+        "sign_accuracy": 0.9993489583333334,
+        "n_sign": 1536
+      },
+      "offgrid": {
+        "n": 100,
+        "r2": 0.9825669641156469,
+        "mae": 0.05046629782038691,
+        "rmse": 0.08506483286108985,
+        "bias": 0.02506182365359878,
+        "sign_accuracy": 0.9722222222222222,
+        "n_sign": 36
+      },
+      "offgrid_compact": {
+        "n": 72,
+        "r2": 0.9825255610167563,
+        "mae": 0.06820382239502032,
+        "rmse": 0.10015284251825549,
+        "bias": 0.0346966781484144,
+        "sign_accuracy": 0.9722222222222222,
+        "n_sign": 36
+      }
+    }
+  },
+  "note": "These are internal model-selection metrics. Final performance must be reported only on the independent off-grid test2 set."
+}

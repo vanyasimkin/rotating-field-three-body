@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the archived software release and the accompanying paper."
+title: "Rotating-Field Three-Body Polarization"
+type: software
+authors:
+  - family-names: "Simkin"
+    given-names: "Ivan"
+repository-code: "https://github.com/vanyasimkin/rotating-field-three-body"
+version: "0.1.0"
+date-released: "2026-07-23"
+license: "BSD-3-Clause"

@@ -1,0 +1,376 @@
+{
+  "created_utc": "2026-07-23T12:52:43.297179+00:00",
+  "entries": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "size_bytes": 579,
+      "sha256": "61d149f5728d5093fa900c23c886dc2d2a9fac705963ccaba75a09b9441e99c3",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": ".gitignore",
+      "size_bytes": 436,
+      "sha256": "100ef50624478826ef6cf3ecd339b1fbeab11bc73f7ede885a9a2f81a4a327f2",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "CHANGELOG.md",
+      "size_bytes": 552,
+      "sha256": "2556ee109dfe6c0e10756987ad96a21d02e9021aeaee2f61ad01c7c23529ce73",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "CITATION.cff",
+      "size_bytes": 394,
+      "sha256": "5e93e8b1524429cbe17c2ddcb18b075a3b0e9f52eacbc5e41350761692eb9260",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "size_bytes": 477,
+      "sha256": "39b05c1014cedc1a0cb5bb6f883fb08df77a4fb7c502191d2549da6ad750a785",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "LICENSE",
+      "size_bytes": 1536,
+      "sha256": "47828ed9ae7fd28ea3337feb18d8767993958a758e486b8f27f32c9bfb2aad0b",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 4847,
+      "sha256": "9015c2fc8aa59c9e865e9fced35464b7c7792bcafe6a5504147099e9078b4e0d",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "README_APPLY_WINDOWS_RU.md",
+      "size_bytes": 2948,
+      "sha256": "79c67e173b976631a6c8005f9481e4de1e538d3b6345003a6f8fbe1712eeac43",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "data/asset_manifest.template.json",
+      "size_bytes": 762,
+      "sha256": "defaf2a02154610fcaa0db2e21318fbbe726db7146ea402406c671875d5ec0a9",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "data/cluster_example.json",
+      "size_bytes": 147,
+      "sha256": "113072be50a3feaaf08224fa36954513379b50b1b8e547e589c2073c8f51f7c4",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "data/delta3_surrogate_corrected_metrics.json",
+      "size_bytes": 2014,
+      "sha256": "d3cea39edfdd7eb1b71317b584addc29d7e9e74dc23a84d2ed9e1bffbbda370f",
+      "classification": "existing project asset copied into repository starter",
+      "source": null
+    },
+    {
+      "path": "data/delta3_surrogate_corrected_model_info.json",
+      "size_bytes": 9019,
+      "sha256": "6b60da16116d86cd271c5b7fd47ddab52eff1bb74ff1ddc93b3b6576fc72520e",
+      "classification": "existing project asset copied into repository starter",
+      "source": null
+    },
+    {
+      "path": "data/scm_pair_orientation_map_lmax6_beta2p5.npz",
+      "size_bytes": 38937,
+      "sha256": "a1e959250ee1af07af8ed16b90fb6f8c4c5c20b8a70c9c445d3134f0aa9d2a4d",
+      "classification": "existing project asset copied into repository starter",
+      "source": null
+    },
+    {
+      "path": "data/triplet_example.json",
+      "size_bytes": 118,
+      "sha256": "31add43b76e2b646a6139263fe64f5882edbcf37e26606cea4210cc278d4fa0b",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "docs/assets.md",
+      "size_bytes": 660,
+      "sha256": "27f3589faf423f16c6a6ed38a92d5bcc92cfee908caac1b288b495ae3ae10715",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "docs/interpretation_scope.md",
+      "size_bytes": 951,
+      "sha256": "e40f6029789631cd80e8f64fbedb28c9c0f132517a6693a895b3cf8f23925b00",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "docs/reproduction.md",
+      "size_bytes": 813,
+      "sha256": "41b55231c47db4b07476e32058fae105af9bd7d6dfd2cb4530b17ebc0262239e",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "examples/predict_cluster.py",
+      "size_bytes": 1071,
+      "sha256": "c52c01ce9bd33b6d0ad19c18775bc865d01c515e6ec483a2daf8ee50c1e581ac",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "examples/predict_one_triplet.py",
+      "size_bytes": 900,
+      "sha256": "183026a2ed5fd9d89f4c1fa46432989c1b1040992eee142abab052c576dbee6b",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "examples/run_one_scm_triplet.py",
+      "size_bytes": 1242,
+      "sha256": "b1b6c6818cd8944159f67d519116ba6981aa758dc9c4df4401c6ba6adddae9a8",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "pyproject.toml",
+      "size_bytes": 1380,
+      "sha256": "01510832ad8e6b653e86a5b82587669be1ad66d2b2db51551c3875e4e6310257",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "reports/CREATED_FILES.md",
+      "size_bytes": 1567,
+      "sha256": "fe09c07c9a73ef330ca9f427c881bda64bc7312977fa08bf348a962ad0f348c7",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "reports/VALIDATION_REPORT.md",
+      "size_bytes": 1048,
+      "sha256": "021305e371b1b527b3e876c736f9cb3dcb61d9dea5e13eca655230808822e3fe",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "reports/release_verification.json",
+      "size_bytes": 2346,
+      "sha256": "0295ff9e9bc86d0eb27ea6459daa489ee41b95418dfaf08a1813fdc4e8d44144",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "reports/scm_smoke_output.json",
+      "size_bytes": 1606,
+      "sha256": "3487f975efb786d087a76ca2aea6b22abd2bac86987843b84b43831c2e5db183",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "source_backup/cluster_motifs.py",
+      "size_bytes": 4870,
+      "sha256": "807abbac2d55dd96ac1561f2d3c3422fb142ab98d9200113fc2c86384e31102a",
+      "classification": "unaltered backup of existing source",
+      "source": null
+    },
+    {
+      "path": "source_backup/delta3_invariant_features.py",
+      "size_bytes": 6275,
+      "sha256": "b3226869a5d4cf3461f0fedbe57f92c8b98b063b65d575e125fcd7710e8bc4aa",
+      "classification": "unaltered backup of existing source",
+      "source": null
+    },
+    {
+      "path": "source_backup/delta3_surrogate_runtime.py",
+      "size_bytes": 7119,
+      "sha256": "b6402e0d8a14c257b7dc3ecbd058389dbffad95fd71d7dbf70b81fb4cee4caed",
+      "classification": "unaltered backup of existing source",
+      "source": null
+    },
+    {
+      "path": "source_backup/scm3d_geometry.py",
+      "size_bytes": 3994,
+      "sha256": "e01f4394b547c2721221d9d0e7252824a2e28743936e91be1348ea97060eeaaf",
+      "classification": "unaltered backup of existing source",
+      "source": null
+    },
+    {
+      "path": "source_backup/scm3d_pair_physical.py",
+      "size_bytes": 7915,
+      "sha256": "cfdcfefd495118d9f7e08f926b3e75133a769c622f23b325acab2b6a4cff6324",
+      "classification": "unaltered backup of existing source",
+      "source": null
+    },
+    {
+      "path": "source_backup/scm_core.py",
+      "size_bytes": 14656,
+      "sha256": "c2c551b579725cc6d0e21607758a5a3cd527fca4ae9c1b539fa937b20d7438bd",
+      "classification": "unaltered backup of existing source",
+      "source": null
+    },
+    {
+      "path": "src/rotating_field_three_body/__init__.py",
+      "size_bytes": 1102,
+      "sha256": "b78ae8ca0b3adb484336f2a2c54b3e69936ef71e2c81dd79c2165702d8756eb1",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "src/rotating_field_three_body/__main__.py",
+      "size_bytes": 48,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "src/rotating_field_three_body/api.py",
+      "size_bytes": 11725,
+      "sha256": "57b146ee82168423184275ea2df1635e41908cadc543311ff4f29330892be7ac",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "src/rotating_field_three_body/assets.py",
+      "size_bytes": 3644,
+      "sha256": "1407c45eb9687a5b4565bd4adef5ef188aa8b578e3ebbdd00658ff3e5f84fb1c",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "src/rotating_field_three_body/cli.py",
+      "size_bytes": 4698,
+      "sha256": "c5d5e4c570f7331dc77fcbc27451cf8ae3beae42007ea74f1579eab333bf129c",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "src/rotating_field_three_body/config.py",
+      "size_bytes": 330,
+      "sha256": "589e9404b6aa5983cb169239ab169e2e483af57aeb107c545d5e551ccc44cb74",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "src/rotating_field_three_body/features.py",
+      "size_bytes": 6275,
+      "sha256": "b3226869a5d4cf3461f0fedbe57f92c8b98b063b65d575e125fcd7710e8bc4aa",
+      "classification": "packaged copy of verified existing source",
+      "source": "source_backup/delta3_invariant_features.py"
+    },
+    {
+      "path": "src/rotating_field_three_body/geometry.py",
+      "size_bytes": 3994,
+      "sha256": "e01f4394b547c2721221d9d0e7252824a2e28743936e91be1348ea97060eeaaf",
+      "classification": "packaged copy of verified existing source",
+      "source": "source_backup/scm3d_geometry.py"
+    },
+    {
+      "path": "src/rotating_field_three_body/io.py",
+      "size_bytes": 2109,
+      "sha256": "7f2cb34fd0fefb63a3e7aa4bd2c3951924d987de9517e1bd90a1e11d9e134b59",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "src/rotating_field_three_body/motifs.py",
+      "size_bytes": 4870,
+      "sha256": "807abbac2d55dd96ac1561f2d3c3422fb142ab98d9200113fc2c86384e31102a",
+      "classification": "packaged copy of verified existing source",
+      "source": "source_backup/cluster_motifs.py"
+    },
+    {
+      "path": "src/rotating_field_three_body/pair_map.py",
+      "size_bytes": 7915,
+      "sha256": "cfdcfefd495118d9f7e08f926b3e75133a769c622f23b325acab2b6a4cff6324",
+      "classification": "packaged copy of verified existing source",
+      "source": "source_backup/scm3d_pair_physical.py"
+    },
+    {
+      "path": "src/rotating_field_three_body/scm.py",
+      "size_bytes": 14656,
+      "sha256": "c2c551b579725cc6d0e21607758a5a3cd527fca4ae9c1b539fa937b20d7438bd",
+      "classification": "packaged copy of verified existing source",
+      "source": "source_backup/scm_core.py"
+    },
+    {
+      "path": "src/rotating_field_three_body/surrogate.py",
+      "size_bytes": 7103,
+      "sha256": "b6fca408b45d28b13cfeee5f2b6d7cd1ae8ef67b7ae47f459bc206581cb63b3f",
+      "classification": "packaged copy of verified existing source",
+      "source": "source_backup/delta3_surrogate_runtime.py"
+    },
+    {
+      "path": "tests/test_api.py",
+      "size_bytes": 1152,
+      "sha256": "d9d3a7670281ae1a23d0232277a395399770052e61a8b209ceb849d63782ee02",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "tests/test_features.py",
+      "size_bytes": 548,
+      "sha256": "c38bc9f9d97b2b9dd05ef1c4d971646e0b929f7e2428a284ca9b8f7778e586bb",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "tests/test_geometry.py",
+      "size_bytes": 1067,
+      "sha256": "2aeb16320a5d8f98c50fc921537f30bed5f8de76be22ed3264f378a5fcf959ee",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "tests/test_pair_map.py",
+      "size_bytes": 1154,
+      "sha256": "12033f96b4ef2abc544e40ed8f2c928b11aab2b41489f77996967f0362eb0e45",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "tests/test_scm.py",
+      "size_bytes": 766,
+      "sha256": "6d0193752e011361108eae97b2c24150d5a0c63aad8753f91ae2afc510ce34f0",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "tests/test_surrogate.py",
+      "size_bytes": 1205,
+      "sha256": "8be84ff7f1241e4a881f6dc5655174f2fdefc366b9939b75081d379ccf8f75f7",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "tools/create_github_repo.ps1",
+      "size_bytes": 788,
+      "sha256": "8fb87e3ce6111a024b824fab0ca032c69e92f9938e94a93944dc3a331aeac0d5",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "tools/import_existing_project_files.ps1",
+      "size_bytes": 2121,
+      "sha256": "6cddd0dacbed430943e5c89c58e22bd8d7ed6856c9653d157bac7bbd78a8c751",
+      "classification": "new repository file",
+      "source": null
+    },
+    {
+      "path": "tools/verify_release.py",
+      "size_bytes": 2727,
+      "sha256": "a67f7106c69c94e071a8eb684b3fa9237efc07a781c63497bcda23c609edc776",
+      "classification": "new repository file",
+      "source": null
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rotating-field-three-body"
+version = "0.1.0"
+description = "SCM calculations and a permutation-invariant ML3B surrogate for rotating-field colloids"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Ivan Simkin"}
+]
+keywords = [
+  "colloids",
+  "dielectric spheres",
+  "multipole method",
+  "many-body interactions",
+  "machine learning",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: BSD License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+  "numpy>=2.0,<3",
+  "scipy>=1.14,<2",
+  "joblib>=1.4,<2",
+  "scikit-learn==1.7.2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+  "pytest-cov>=5,<7",
+  "ruff>=0.8,<1",
+]
+
+[project.scripts]
+rf3b = "rotating_field_three_body.cli:main"
+
+[project.urls]
+Repository = "https://github.com/vanyasimkin/rotating-field-three-body"
+Issues = "https://github.com/vanyasimkin/rotating-field-three-body/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
