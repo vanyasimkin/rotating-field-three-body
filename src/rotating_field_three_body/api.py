@@ -121,7 +121,7 @@ def predict_triplet_delta3(
     diameter:
         Particle diameter in the same unit as ``centers``.
     model:
-        Loaded model payload or path to the canonical joblib file.
+        Loaded model payload or path to the released joblib file.
     """
     xyz = _centers_array(centers, n_particles=3)
     if diameter <= 0:

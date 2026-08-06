@@ -43,3 +43,9 @@ def test_domain_report_non_raising():
     report = triplet_domain_report(np.array([[1.2, 2.0, 3.0], [1.0, 2.0, 3.0]]))
     assert report["valid_mask"].tolist() == [True, False]
     assert report["reasons"][1]
+
+
+def test_triplet_edges_rejects_nonpositive_diameter():
+    centers = np.zeros((1, 3, 3), dtype=float)
+    with np.testing.assert_raises_regex(ValueError, "positive finite"):
+        triplet_edges_batch(centers, 0.0)

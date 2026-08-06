@@ -7,10 +7,18 @@ name = "rotating-field-three-body"
 version = "0.1.0"
 description = "SCM calculations and a permutation-invariant ML3B surrogate for rotating-field colloids"
 readme = "README.md"
-requires-python = ">=3.11"
-license = {file = "LICENSE"}
+requires-python = ">=3.11,<3.14"
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
 authors = [
-  {name = "Ivan Simkin"}
+  {name = "Ivan Simkin"},
+  {name = "Anton Shvetsov"},
+  {name = "Rania Nafikova"},
+  {name = "Nikita Kryuchkov"},
+  {name = "Stanislav Yurchenko"},
+]
+maintainers = [
+  {name = "Ivan Simkin"},
 ]
 keywords = [
   "colloids",
@@ -22,8 +30,10 @@ keywords = [
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Intended Audience :: Science/Research",
-  "License :: OSI Approved :: BSD License",
   "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
   "Topic :: Scientific/Engineering :: Physics",
 ]
 dependencies = [
@@ -46,6 +56,7 @@ rf3b = "rotating_field_three_body.cli:main"
 [project.urls]
 Repository = "https://github.com/vanyasimkin/rotating-field-three-body"
 Issues = "https://github.com/vanyasimkin/rotating-field-three-body/issues"
+"Model archive" = "https://doi.org/10.5281/zenodo.21512150"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

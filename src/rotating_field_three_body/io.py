@@ -32,6 +32,8 @@ def read_centers(path: Path | str) -> np.ndarray:
         raise ValueError("Coordinates must be supplied as .json or .csv.")
     if centers.ndim != 2 or centers.shape[1] != 3:
         raise ValueError(f"Coordinates must have shape (N, 3), got {centers.shape}.")
+    if not np.all(np.isfinite(centers)):
+        raise ValueError("Coordinates contain NaN or infinite values.")
     return centers
 
 
