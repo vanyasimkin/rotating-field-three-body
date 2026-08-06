@@ -1,27 +1,29 @@
 # Rotating-Field Three-Body Polarization
 
-Reusable matrix-SCM calculations and a permutation-invariant ML3B surrogate for dielectric colloids in an electric field rotating in the `xy` plane.
+[![CI](https://github.com/vanyasimkin/rotating-field-three-body/actions/workflows/ci.yml/badge.svg)](https://github.com/vanyasimkin/rotating-field-three-body/actions/workflows/ci.yml)
+[![Model DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21512150.svg)](https://doi.org/10.5281/zenodo.21512150)
 
-This repository starter separates two use cases:
+Matrix self-consistent multipole (SCM) calculations and a permutation-invariant ML3B surrogate for dielectric colloids in an electric field rotating in the `xy` plane.
 
-- **model use:** predict the irreducible triplet contribution for one triplet, a batch, or all triplets in a cluster;
-- **direct calculation:** compute one triplet with the validated matrix-SCM definition and subtract the refined pair-map reference.
+## Scope
 
-## What is included
+This repository provides:
 
-- matrix-SCM core;
-- 3D triplet geometry convention;
-- physically constrained pair-map interpolation;
-- exact 120-feature permutation-invariant representation;
-- surrogate runtime;
-- deterministic `N=4--6` cluster motifs;
-- high-level Python API and CLI;
-- refined pair map used by the corrected pipeline;
-- tests, examples, and GitHub Actions.
+- the matrix-SCM implementation used for fixed-geometry calculations;
+- the three-dimensional triplet geometry convention;
+- the physically constrained SCM pair-map interpolator;
+- the 120-feature permutation-invariant representation;
+- runtime tools for the released ML3B surrogate;
+- high-level Python and command-line interfaces;
+- examples, unit tests, and continuous integration.
 
-## What is not included yet
+The trained model is archived separately in Zenodo because the joblib file is 5.77 GB. The refined pair-interaction map and model metadata are included in this repository.
 
-The canonical trained model is not stored in this starter. Its recorded file is:
+This repository does **not** include the numerical arrays or custom plotting/table-generation scripts underlying the figures and tables of the associated article. It is a model-use and reference-calculation release, not a complete article-reproduction package.
+
+## Released model
+
+Zenodo DOI: `10.5281/zenodo.21512150`
 
 ```text
 delta3_surrogate_corrected.joblib
@@ -29,7 +31,9 @@ size:   5,767,044,032 bytes
 SHA256: 75f58bd77a49b4dce61ffcfe2591f5183bdfc709e9dd25a1f2a2f9d7d42eed68
 ```
 
-Publish it in an immutable data/model archive, then fill `data/asset_manifest.json` from the provided template.
+The saved estimator was produced with Python 3.13.3, NumPy 2.3.3, scikit-learn 1.7.2, and joblib 1.5.2. Model inference is verified only in that recorded environment until additional environments are explicitly tested. Source-level CI covers Python 3.11 and 3.13.
+
+> **Security:** joblib files use Python pickle semantics and can execute code while loading. Download the model only from the DOI above and verify its SHA-256 before calling `joblib.load`. See [SECURITY.md](SECURITY.md).
 
 ## Installation
 
@@ -47,19 +51,44 @@ python -m pip install --upgrade pip
 python -m pip install -e ".[dev]"
 ```
 
-The canonical joblib metadata records Python 3.13.3, NumPy 2.3.3, scikit-learn 1.7.2, and joblib 1.5.2. The package pins scikit-learn 1.7.2 because loading persisted scikit-learn estimators across versions is not guaranteed.
+For the closest match to the archived model environment, use Python 3.13 and the dependency versions recorded in `data/delta3_surrogate_corrected_model_info.json`.
 
-## Quick checks
+## Download and verify the model
+
+After the Zenodo record has been published:
 
 ```bash
-python -m compileall -q src examples tests
+rf3b download-assets \
+  --manifest data/asset_manifest.json \
+  --destination data/external
+```
+
+The downloader writes through a temporary `.part` file and verifies both the declared file size and SHA-256 checksum before accepting the asset.
+
+## Repository checks
+
+```bash
+python -m compileall -q src examples tests tools
 python -m pytest -q
 python -m rotating_field_three_body --help
 ```
 
+A release verification report can be generated with:
+
+```bash
+python tools/verify_release.py
+```
+
+To verify and load an already downloaded model and run an inference smoke test:
+
+```bash
+python tools/verify_release.py \
+  --model data/external/delta3_surrogate_corrected.joblib
+```
+
 ## Predict one triplet
 
-Coordinates and diameter must use the same length unit. The prediction is tied to the physical system and energy normalization used to train the archived model.
+Coordinates and particle diameter must use the same length unit. The released model predicts the irreducible three-body energy for the fixed physical parameters and normalization used during training.
 
 ```bash
 rf3b predict-triplet \
@@ -94,17 +123,17 @@ rf3b predict-cluster \
   --output outputs/cluster_prediction.json
 ```
 
-The reported `pair_plus_ml3b` value is a **truncated pair-plus-triplet expansion**. It is not the direct full-cluster SCM energy and omits irreducible terms of order four and above.
+The reported `pair_plus_ml3b` energy is a truncated pair-plus-three-body expansion. It is not the direct full-cluster SCM energy and omits irreducible contributions of order four and above.
 
 ## Direct SCM triplet
 
-Fast smoke test:
+Reduced-resolution software smoke test:
 
 ```bash
 python examples/run_one_scm_triplet.py --lmax 1 --n-quad 80
 ```
 
-Article settings:
+Article-resolution settings for one supplied geometry:
 
 ```bash
 rf3b scm-triplet \
@@ -116,7 +145,7 @@ rf3b scm-triplet \
   --output outputs/triplet_scm.json
 ```
 
-The smoke-test output must not be used to replace article numbers.
+Reduced smoke-test outputs must not be substituted for article values.
 
 ## Coordinate convention
 
@@ -134,18 +163,19 @@ and then tilted around the laboratory `x` axis by `psi`.
 - `alpha`: azimuthal orientation before tilt;
 - `psi`: tilt of the triangle plane relative to the field-rotation plane.
 
-## Scientific status of outputs
+## Scientific interpretation
 
-- **Model definition:** the SCM equations, pair subtraction, and feature construction are defined by the source code and stated parameters.
-- **Numerical observation:** every computed energy, accuracy metric, boundary location, and runtime is numerical and must be tied to an archived output.
-- **Interpretation:** implications for motif selection or self-assembly are physical interpretations, not guarantees of the software.
+- **Defined within the model:** SCM equations, pair subtraction, feature construction, and the pair-plus-three-body truncation.
+- **Numerical observations:** computed energies, validation metrics, runtimes, and boundary locations for declared parameters and artifacts.
+- **Interpretations:** implications for motif selection and self-assembly; these are not guarantees of the software API.
 
-See `docs/interpretation_scope.md`.
-
-## Repository preparation
-
-The files in `source_backup/` preserve the source modules from which the installable package was assembled. `reports/SOURCE_MANIFEST.json` records their SHA-256 hashes and identifies newly created wrapper files.
+See [MODEL_CARD.md](MODEL_CARD.md) and [docs/interpretation_scope.md](docs/interpretation_scope.md).
 
 ## Citation
 
-Update `CITATION.cff` with the final author list, software DOI, data/model DOI, and paper citation before release `v1.0.0`.
+For model use, cite the Zenodo model record and the specific GitHub release/tag. The accompanying journal article should be cited once its bibliographic record is available. Citation metadata are provided in [CITATION.cff](CITATION.cff).
+
+## Licenses
+
+- Source code in this repository: BSD 3-Clause License, see [LICENSE](LICENSE).
+- Files in the associated Zenodo model record: Creative Commons Attribution 4.0 International, as stated on that record.

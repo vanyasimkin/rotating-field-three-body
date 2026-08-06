@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "release_version": "0.1.0",
+  "record_doi": "10.5281/zenodo.21512150",
+  "record_url": "https://doi.org/10.5281/zenodo.21512150",
+  "assets": [
+    {
+      "name": "surrogate_model",
+      "filename": "delta3_surrogate_corrected.joblib",
+      "url": "https://zenodo.org/records/21512150/files/delta3_surrogate_corrected.joblib?download=1",
+      "sha256": "75f58bd77a49b4dce61ffcfe2591f5183bdfc709e9dd25a1f2a2f9d7d42eed68",
+      "size_bytes": 5767044032,
+      "required_for": ["predict-triplet", "predict-cluster"]
+    }
+  ]
+}

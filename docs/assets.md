@@ -1,13 +1,8 @@
-# External assets
+# External model asset
 
-The trained `delta3_surrogate_corrected.joblib` file is not included in Git because its recorded size is 5,767,044,032 bytes.
+The trained `delta3_surrogate_corrected.joblib` file is not tracked in Git because its size is 5,767,044,032 bytes. It is archived under Zenodo DOI `10.5281/zenodo.21512150`.
 
-After creating an immutable Zenodo model record:
-
-1. Copy `data/asset_manifest.template.json` to `data/asset_manifest.json`.
-2. Replace the placeholder download URLs.
-3. Insert the verified SHA-256 for every asset.
-4. Test the downloader:
+Download and verify it with:
 
 ```bash
 rf3b download-assets \
@@ -15,4 +10,16 @@ rf3b download-assets \
   --destination data/external
 ```
 
-The canonical recorded model SHA-256 is already included in the template. The pair-map SHA-256 is generated in `reports/SOURCE_MANIFEST.json` for this starter package.
+The manifest declares the immutable filename, expected size, and SHA-256. A download is accepted only after both checks pass.
+
+The refined pair map is small enough to remain version-controlled at:
+
+```text
+data/scm_pair_orientation_map_lmax6_beta2p5.npz
+```
+
+Its SHA-256 in this release is:
+
+```text
+a1e959250ee1af07af8ed16b90fb6f8c4c5c20b8a70c9c445d3134f0aa9d2a4d
+```

@@ -1,11 +1,36 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite the archived software release and the accompanying paper."
+message: >-
+  If you use this software, cite the tagged GitHub release and the associated
+  Zenodo model record. Cite the accompanying paper when its bibliographic
+  record becomes available.
 title: "Rotating-Field Three-Body Polarization"
 type: software
+version: "0.1.0"
+date-released: "2026-08-07"
+repository-code: "https://github.com/vanyasimkin/rotating-field-three-body"
+license: "BSD-3-Clause"
 authors:
   - family-names: "Simkin"
     given-names: "Ivan"
-repository-code: "https://github.com/vanyasimkin/rotating-field-three-body"
-version: "0.1.0"
-date-released: "2026-07-23"
-license: "BSD-3-Clause"
+    orcid: "https://orcid.org/0000-0003-1650-4177"
+  - family-names: "Shvetsov"
+    given-names: "Anton"
+    orcid: "https://orcid.org/0009-0006-7572-7310"
+  - family-names: "Nafikova"
+    given-names: "Rania"
+  - family-names: "Kryuchkov"
+    given-names: "Nikita"
+    orcid: "https://orcid.org/0000-0002-9085-1284"
+  - family-names: "Yurchenko"
+    given-names: "Stanislav"
+    orcid: "https://orcid.org/0000-0001-6821-904X"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21512150"
+    description: "Associated archived ML3B model and SCM pair-interaction map"
+keywords:
+  - dielectric colloids
+  - three-body interaction
+  - many-body polarization
+  - rotating electric field
+  - surrogate model

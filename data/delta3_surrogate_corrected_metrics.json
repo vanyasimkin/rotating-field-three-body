@@ -67,5 +67,7 @@
       }
     }
   },
-  "note": "These are internal model-selection metrics. Final performance must be reported only on the independent off-grid test2 set."
+  "note": "These are internal model-selection metrics. Final performance must be reported only on the independent off-grid test2 set.",
+  "metric_units": "scaled energy units; 1 unit = 1e-21 J",
+  "evaluation_scope": "internal model-selection splits only; not the independent off-grid test2 evaluation reported in the article"
 }

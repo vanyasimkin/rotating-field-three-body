@@ -4,11 +4,20 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     strategy:
+      fail-fast: false
       matrix:
         python-version: ["3.11", "3.13"]
 
@@ -26,7 +35,13 @@ jobs:
           python -m pip install -e ".[dev]"
 
       - name: Compile
-        run: python -m compileall -q src examples tests
+        run: python -m compileall -q src examples tests tools
 
       - name: Test
         run: python -m pytest -q
+
+      - name: CLI smoke test
+        run: python -m rotating_field_three_body --help
+
+      - name: Build wheel
+        run: python -m pip wheel . --no-deps --no-build-isolation --wheel-dir wheelhouse

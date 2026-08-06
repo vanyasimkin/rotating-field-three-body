@@ -39,6 +39,8 @@ def pair_edges_from_centers(
         raise ValueError(f"centers must have shape (N, 3), got {centers.shape}.")
     if len(centers) < 2:
         raise ValueError("At least two particles are required.")
+    if not np.all(np.isfinite(centers)):
+        raise ValueError("centers contain NaN or infinite values.")
 
     pairs: List[Tuple[int, int]] = []
     distances: List[float] = []
@@ -78,6 +80,8 @@ def triplet_edges_batch(
     d
         Particle diameter in the same units.
     """
+    if not np.isfinite(d) or d <= 0.0:
+        raise ValueError("d must be a positive finite particle diameter.")
     centers_batch = np.asarray(centers_batch, dtype=float)
     if centers_batch.ndim == 2:
         centers_batch = centers_batch[None, ...]
@@ -86,6 +90,8 @@ def triplet_edges_batch(
             "centers_batch must have shape (B, 3, 3), "
             f"got {centers_batch.shape}."
         )
+    if not np.all(np.isfinite(centers_batch)):
+        raise ValueError("centers_batch contains NaN or infinite values.")
 
     vectors = np.stack(
         [
@@ -106,7 +112,14 @@ def triplet_edges_batch(
 
 
 def load_surrogate(model_path: Path | str) -> Dict[str, Any]:
+    """Load the released surrogate payload.
+
+    Warning: joblib uses pickle semantics. Only load a file obtained from the
+    declared release archive after its SHA-256 has been verified.
+    """
     payload = joblib.load(Path(model_path))
+    if not isinstance(payload, dict):
+        raise TypeError("The saved surrogate payload must be a dictionary.")
     if payload.get("feature_mode") != "invariant":
         raise ValueError(
             "The model is not permutation invariant. Retrain with "
@@ -124,7 +137,14 @@ def validate_triplet_domain(
     domain: Dict[str, float] | None = None,
 ) -> None:
     domain = dict(DEFAULT_DOMAIN if domain is None else domain)
-    sorted_r = np.sort(np.asarray(edge_r_over_d, dtype=float), axis=1)
+    edges = np.asarray(edge_r_over_d, dtype=float)
+    if edges.ndim == 1:
+        edges = edges[None, :]
+    if edges.ndim != 2 or edges.shape[1] != 3:
+        raise ValueError(f"edge_r_over_d must have shape (B, 3), got {edges.shape}.")
+    if not np.all(np.isfinite(edges)):
+        raise ValueError("edge_r_over_d contains NaN or infinite values.")
+    sorted_r = np.sort(edges, axis=1)
     bad = (
         (sorted_r[:, 0] < domain["rmin_min"] - 1e-10)
         | (sorted_r[:, 1] > domain["rmid_max"] + 1e-10)

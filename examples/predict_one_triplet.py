@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Predict Delta3 for one coordinate file using the canonical joblib model."""
+"""Predict Delta3 for one coordinate file using the released joblib model."""
 
 from __future__ import annotations
 

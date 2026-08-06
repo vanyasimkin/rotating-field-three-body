@@ -1,5 +1,5 @@
 {
-  "model_file": "results_scm_3d_maps\\models\\delta3_surrogate_corrected.joblib",
+  "model_file": "delta3_surrogate_corrected.joblib",
   "model_size_bytes": 5767044032,
   "model_sha256": "75f58bd77a49b4dce61ffcfe2591f5183bdfc709e9dd25a1f2a2f9d7d42eed68",
   "python_version": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
@@ -333,8 +333,8 @@
     "selected_model": "extratrees",
     "training_version": "v3_augmented_grid_plus_offgrid1",
     "training_sources": {
-      "grid": "results_scm_3d_maps\\corrected_targets\\scm_triangle_full_map_lmax6_corrected.npz",
-      "offgrid1": "results_scm_3d_maps\\corrected_targets\\scm_delta3_offgrid_lmax6_corrected.npz",
+      "grid": "scm_triangle_full_map_lmax6_corrected.npz (not included in release)",
+      "offgrid1": "scm_delta3_offgrid_lmax6_corrected.npz (not included in release)",
       "weights": null
     },
     "n_grid": 44100,
@@ -368,5 +368,12 @@
         "n_sign": 36
       }
     }
+  },
+  "release_metadata": {
+    "release_version": "0.1.0",
+    "archive_doi": "10.5281/zenodo.21512150",
+    "repository_url": "https://github.com/vanyasimkin/rotating-field-three-body",
+    "public_scope": "trained model, pair map, metadata, internal model-selection metrics, and runtime code",
+    "excluded_scope": "article figure/table arrays, plotting scripts, and full training datasets"
   }
 }
