@@ -27,6 +27,10 @@ rf3b scm-triplet \
   --n-quad 8000 \
   --n-orient 8 \
   --output outputs/triplet_scm.json
-```
 
-This command evaluates the supplied geometry with the declared numerical settings. It does not reproduce the article figures, tables, aggregate metrics, or full validation datasets, because those processed arrays and plotting scripts are outside the scope of this release.
+```
+This command evaluates the supplied geometry with the declared numerical settings. It does not by itself reproduce the article figures, tables, or aggregate validation results.
+
+The numerical datasets and publication analysis/plotting scripts underlying those results are archived separately at:
+
+https://doi.org/10.5281/zenodo.21873974
