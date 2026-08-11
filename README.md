@@ -19,7 +19,15 @@ This repository provides:
 
 The trained model is archived separately in Zenodo because the joblib file is 5.77 GB. The refined pair-interaction map and model metadata are included in this repository.
 
-This repository does **not** include the numerical arrays or custom plotting/table-generation scripts underlying the figures and tables of the associated article. It is a model-use and reference-calculation release, not a complete article-reproduction package.
+This GitHub repository is the maintained software and model-use release.
+
+The numerical datasets and publication analysis/plotting scripts underlying the figures, tables, and quantitative results of the accompanying article are archived separately on Zenodo:
+
+**Article dataset:** https://doi.org/10.5281/zenodo.21873974
+
+The trained ML3B surrogate and its archived model metadata are available at:
+
+**ML3B model archive:** https://doi.org/10.5281/zenodo.21512150
 
 ## Released model
 
@@ -48,43 +56,23 @@ python -m venv .venv
 # source .venv/bin/activate
 
 python -m pip install --upgrade pip
-python -m pip install -e ".[dev]"
 ```
 
 For the closest match to the archived model environment, use Python 3.13 and the dependency versions recorded in `data/delta3_surrogate_corrected_model_info.json`.
 
 ## Download and verify the model
 
-After the Zenodo record has been published:
+The trained model is required for ML3B predictions. Download and verify
+the archived model with:
 
 ```bash
 rf3b download-assets \
   --manifest data/asset_manifest.json \
   --destination data/external
 ```
+The 5.77 GB model is not required for the direct SCM examples.
 
 The downloader writes through a temporary `.part` file and verifies both the declared file size and SHA-256 checksum before accepting the asset.
-
-## Repository checks
-
-```bash
-python -m compileall -q src examples tests tools
-python -m pytest -q
-python -m rotating_field_three_body --help
-```
-
-A release verification report can be generated with:
-
-```bash
-python tools/verify_release.py
-```
-
-To verify and load an already downloaded model and run an inference smoke test:
-
-```bash
-python tools/verify_release.py \
-  --model data/external/delta3_surrogate_corrected.joblib
-```
 
 ## Predict one triplet
 
