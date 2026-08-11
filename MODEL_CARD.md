@@ -7,6 +7,7 @@
 - Size: `5,767,044,032` bytes
 - SHA-256: `75f58bd77a49b4dce61ffcfe2591f5183bdfc709e9dd25a1f2a2f9d7d42eed68`
 - Archive DOI: `10.5281/zenodo.21512150`
+- Article dataset DOI: `10.5281/zenodo.21873974`
 
 ## Purpose
 
