@@ -56,6 +56,7 @@ rf3b = "rotating_field_three_body.cli:main"
 [project.urls]
 Repository = "https://github.com/vanyasimkin/rotating-field-three-body"
 Issues = "https://github.com/vanyasimkin/rotating-field-three-body/issues"
+"Article data" = "https://doi.org/10.5281/zenodo.21873974"
 "Model archive" = "https://doi.org/10.5281/zenodo.21512150"
 
 [tool.setuptools]
