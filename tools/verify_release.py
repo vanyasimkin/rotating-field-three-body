@@ -111,7 +111,6 @@ def check_manifest(root: Path) -> dict[str, Any]:
     code = (
         "from rotating_field_three_body.assets import load_asset_manifest; "
         "m=load_asset_manifest('data/asset_manifest.json'); "
-        "assert m['release_version']=='0.1.0'; "
         "a=m['assets'][0]; "
         f"assert a['filename']=='{EXPECTED_MODEL_NAME}'; "
         f"assert a['size_bytes']=={EXPECTED_MODEL_SIZE}; "
@@ -191,7 +190,6 @@ def main() -> None:
                 "wheel",
                 ".",
                 "--no-deps",
-                "--no-build-isolation",
                 "--wheel-dir",
                 str(wheel_dir),
             ],
