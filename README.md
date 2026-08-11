@@ -1,9 +1,10 @@
 # Rotating-Field Three-Body Polarization
 
 [![CI](https://github.com/vanyasimkin/rotating-field-three-body/actions/workflows/ci.yml/badge.svg)](https://github.com/vanyasimkin/rotating-field-three-body/actions/workflows/ci.yml)
+[![Article data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21873974.svg)](https://doi.org/10.5281/zenodo.21873974)
 [![Model DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21512150.svg)](https://doi.org/10.5281/zenodo.21512150)
 
-Matrix self-consistent multipole (SCM) calculations and a permutation-invariant ML3B surrogate for dielectric colloids in an electric field rotating in the `xy` plane.
+Matrix self-consistent multipole (SCM) calculations and a permutation-invariant ML3B surrogate for orientation-resolved nonadditive polarization of dielectric colloids in a circularly rotating electric field.
 
 ## Scope
 
@@ -76,7 +77,17 @@ The downloader writes through a temporary `.part` file and verifies both the dec
 
 ## Predict one triplet
 
-Coordinates and particle diameter must use the same length unit. The released model predicts the irreducible three-body energy for the fixed physical parameters and normalization used during training.
+Coordinates and particle diameter must use the same length unit. The released model predicts the irreducible three-body contribution \(U^{(3)}\) for the fixed physical parameters used during training,
+
+\[
+U^{(3)}
+=
+U_3
+-
+\sum_{i<j} U_2(r_{ij},\beta_{ij}).
+\]
+
+For historical API compatibility, the software uses the names `delta3`, `delta3_J`, and `predict_triplet_delta3`. These all refer to the same irreducible three-body contribution \(U^{(3)}\) used in the accompanying manuscript.
 
 ```bash
 rf3b predict-triplet \
@@ -137,19 +148,72 @@ Reduced smoke-test outputs must not be substituted for article values.
 
 ## Coordinate convention
 
-A reference triplet is defined by
+The manuscript fixes the reference triplet in the `xy` plane,
 
-```text
-r1 = (0, 0, 0)
-r2 = r12 (cos(alpha), sin(alpha), 0)
-r3 = r13 (cos(alpha + gamma), sin(alpha + gamma), 0)
-```
+\[
+\mathbf r_1 = 0,\qquad
+\mathbf r_2 = r_{12}\hat{\mathbf x},\qquad
+\mathbf r_3 =
+r_{13}
+\left(
+\cos\gamma\,\hat{\mathbf x}
++
+\sin\gamma\,\hat{\mathbf y}
+\right).
+\]
 
-and then tilted around the laboratory `x` axis by `psi`.
+The field-rotation plane is oriented relative to this fixed triplet by
 
-- `gamma`: internal angle between `r12` and `r13`;
-- `alpha`: azimuthal orientation before tilt;
-- `psi`: tilt of the triangle plane relative to the field-rotation plane.
+\[
+Q(\alpha,\psi)=R_x(\psi)R_z(\alpha),
+\]
+
+with
+
+\[
+\mathbf e_1 = Q^{T}\hat{\mathbf x},
+\qquad
+\mathbf e_2 = Q^{T}\hat{\mathbf y},
+\qquad
+\mathbf n_E = \mathbf e_1\times\mathbf e_2 .
+\]
+
+The imposed circular field is
+
+\[
+\mathbf E^{(0)}(\vartheta)
+=
+E_0
+\left(
+\mathbf e_1\cos\vartheta
++
+\mathbf e_2\sin\vartheta
+\right).
+\]
+
+Here:
+
+- `gamma` is the internal angle between the edges \(\mathbf r_{12}\) and \(\mathbf r_{13}\);
+- `psi` is the angle between the triplet plane and the field-rotation plane;
+- `alpha` specifies their relative azimuth;
+- `beta_ij` is the inclination of edge \(ij\) relative to the field-rotation plane,
+
+\[
+\beta_{ij}
+=
+\arcsin
+\left(
+\left|
+\hat{\mathbf r}_{ij}\cdot\mathbf n_E
+\right|
+\right).
+\]
+
+Some geometry helpers in the software use the globally rotated equivalent
+representation in which the field-rotation plane is kept in the laboratory
+`xy` plane and the particle coordinates are rotated instead. This does not
+change the relative particle/field geometry, the edge inclinations
+\(\beta_{ij}\), or the calculated interaction energies.
 
 ## Scientific interpretation
 
